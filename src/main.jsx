@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "../App.jsx";
+import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
@@ -9,7 +9,7 @@ import { persistor, store } from "./store/store.js";
 import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter basename="/Read-Journey">
+  <BrowserRouter basename="/read-journey-progect">
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />
