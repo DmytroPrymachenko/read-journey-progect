@@ -1,0 +1,15 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(./fonts/Gilroy-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(./fonts/Gilroy-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: SF Pro Text;
+  src: url(./fonts/FontsFree-Net-SFProText-Semibold.ttf);
+  font-weight: 600;
+}
