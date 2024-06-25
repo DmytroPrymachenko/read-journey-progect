@@ -12,10 +12,7 @@ export const AuthImage = () => {
           media="(max-width:1279px)"
           srcSet={IPhone + " 1x, " + IPhone2x + " 2x"}
         />
-        <source
-          // media="(min-width:1280px)"
-          srcSet={IPhoneDesk + " 1x, " + IPhoneDesk2x + " 2x"}
-        />
+        <source srcSet={IPhoneDesk + " 1x, " + IPhoneDesk2x + " 2x"} />
         <Picture src={IPhoneDesk} alt="IPhone" loading="lazy" />
       </picture>
     </AuthImageWrap>

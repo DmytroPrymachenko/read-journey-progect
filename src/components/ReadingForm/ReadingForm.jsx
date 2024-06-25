@@ -8,7 +8,6 @@ import {
 import {
   FiltersButton,
   FiltersFormWraper,
-  FiltersInput,
   FiltersInputReading,
   FiltersInputSpan,
   FiltersInputWraper,
@@ -26,8 +25,6 @@ const ReadingForm = () => {
   });
   const bookInfo = useSelector(selectBookInfo);
   const readingInfo = useSelector(selectReadingInfo);
-
-  console.log("readingInfo", readingInfo);
 
   useEffect(() => {
     if (bookInfo && bookInfo.progress.length > 0) {

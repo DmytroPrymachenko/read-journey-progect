@@ -60,9 +60,7 @@ export const Login = () => {
     resolver: yupResolver(schema),
   });
 
-  useEffect(() => {
-    console.log(window.innerWidth);
-  }, []);
+  useEffect(() => {}, []);
   function onSubmit({ email, password }) {
     dispatch(signInThunk({ email, password }))
       .unwrap()

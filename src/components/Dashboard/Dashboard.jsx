@@ -24,7 +24,6 @@ export const Dashboard = ({
   errors,
   validation,
 }) => {
-  // const validation = false;
   function chooseSecondPart(string) {
     switch (string) {
       case "Start your workout":

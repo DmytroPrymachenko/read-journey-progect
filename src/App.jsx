@@ -29,7 +29,6 @@ function App() {
   const loading = useSelector((state) => state.loading.loading);
   const navigate = useNavigate();
 
-  console.log(pathname);
   useEffect(() => {
     if (pathname === "/register" || pathname === "/login") {
       return;

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectBookProgress } from "../../store/books/selectors";
 import { DiaryComponentUl, ProgressWraper } from "./DiaryComponent.Styled";
-import DiaryItem from "./DiaryItem/DiaryItem";
+
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { deleteReadingRecord } from "../../store/books/operations";
@@ -53,7 +53,6 @@ const DiaryComponent = () => {
       toast.error("Error deleting reading record: " + error.message);
     }
   };
-  console.log(filteredProgress);
 
   return (
     <>

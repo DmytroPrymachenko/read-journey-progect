@@ -32,7 +32,6 @@ const Filter = () => {
     mode: "onChange",
   });
   const recommendedBooks = useSelector(selectRecommended);
-  console.log(recommendedBooks);
 
   const [isDesktopView, setIsDesktopView] = useState(window.innerWidth >= 1280);
 

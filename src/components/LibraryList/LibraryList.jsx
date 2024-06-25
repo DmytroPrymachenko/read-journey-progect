@@ -4,7 +4,7 @@ import LibraryItem from "../LibraryItem/LibraryItem";
 
 const LibraryList = () => {
   const userBooks = useSelector(selectUserBooks);
-  console.log("Test", userBooks);
+
   return (
     <>
       <ul>

@@ -1,8 +1,5 @@
 import { useSelector } from "react-redux";
-import {
-  selectBookInfo,
-  selectBookProgress,
-} from "../../store/books/selectors";
+import { selectBookProgress } from "../../store/books/selectors";
 
 import {
   NotStartedComponent,
@@ -20,9 +17,8 @@ import StarPNG from "../../images/StarPNG.png";
 
 const ReadingStatistics = ({ setIsTimeLeft }) => {
   const [activeSection, setActiveSection] = useState("Diary");
-  const bookInfo = useSelector(selectBookInfo);
+
   const bookProgress = useSelector(selectBookProgress);
-  console.log("bookInfo", bookInfo);
 
   useEffect(() => {
     if (activeSection === "Statistics") {

@@ -19,4 +19,3 @@ export function cutString(str, num) {
   }
   return newStr;
 }
-// console.log(cutString("Book New Dark Ages. Book 1: The Colony", 22));

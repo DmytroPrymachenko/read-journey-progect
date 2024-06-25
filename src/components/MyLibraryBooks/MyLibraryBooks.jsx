@@ -34,15 +34,12 @@ export const MyLibraryBooks = () => {
   const [selectedOption, setSelectedOption] = useState(option);
   const prevUserBooks = useSelector(selectPrevUserBooks);
   const dispatch = useDispatch();
-  console.log(selectedOption);
 
   useEffect(() => {
-    console.log(selectedOption);
     dispatch(setOption(selectedOption));
-    console.log(prevUserBooks.length, userBooks.length);
+
     if (selectedOption || prevUserBooks.length !== userBooks.length) {
       dispatch(getfilteredUserBooks(selectedOption.value));
-      console.log(selectedOption.value);
     }
   }, [dispatch, selectedOption, prevUserBooks, userBooks]);
 

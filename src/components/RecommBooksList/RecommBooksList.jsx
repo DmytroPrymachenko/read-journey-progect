@@ -22,9 +22,6 @@ const RecommBooksList = () => {
   const recommendedBooks = useSelector(selectRecommended);
   const booksList = useSelector(selectRecommendedBooks);
   const totalPages = useSelector(selectTotalPages);
-  console.log("recommendedBooks", recommendedBooks);
-  console.log("booksList", booksList);
-  console.log("totalPages", totalPages);
 
   const [page, setPage] = useState(recommendedBooks.page || 1);
 

@@ -18,7 +18,6 @@ const RecommendedItem = ({ book }) => {
   const [isModalItem, setIsModalItem] = useState(false);
   const dispatch = useDispatch();
   const userBooks = useSelector(selectUserBooks);
-  console.log("Test Books", userBooks);
 
   const openModal = () => {
     setIsModalItem(true);
@@ -57,9 +56,9 @@ const RecommendedItem = ({ book }) => {
 
     dispatch(addBookFromRecommendations(book._id))
       .unwrap()
-      .then((data) => {
+      .then(() => {
         toast.success("Book added successfully!");
-        console.log("Book added:", data);
+
         dispatch(fetchUserBooks());
         closeModal();
       })

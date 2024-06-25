@@ -29,7 +29,6 @@ const Header = () => {
   const [isBackdropActiveOpen, setIsBackdropActiveOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log("user", user);
 
   const handleLogout = () => {
     dispatch(logoutThunk())

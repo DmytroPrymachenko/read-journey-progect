@@ -19,7 +19,7 @@ const DiaryList = ({ group, handleDeleteRecord }) => {
     });
     setPagesRead(totalPages);
   }, [group]);
-  console.log("group", group);
+
   return (
     <DiaryDateLi>
       <DiaryListWraper>

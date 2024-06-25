@@ -11,10 +11,6 @@ import { setRecommendData } from "../../store/recommend/recommendSlise";
 import RecommBooksList from "../../components/RecommBooksList/RecommBooksList";
 import Filter from "../../components/Filter/Filter";
 
-// import styled from "styled-components";
-
-// const Test = styled.div``;
-
 const RecommendPage = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const recommendedBooks = useSelector(selectRecommended);
@@ -46,7 +42,6 @@ const RecommendPage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // if (recommendedBooks) {
     dispatch(
       recommendedBooksThunk({
         title: recommendedBooks.title,
@@ -55,7 +50,6 @@ const RecommendPage = () => {
         limit: recommendedBooks.limit,
       })
     );
-    // }
   }, [dispatch, recommendedBooks]);
 
   return (
