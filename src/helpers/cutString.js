@@ -19,3 +19,40 @@ export function cutString(str, num) {
   }
   return newStr;
 }
+
+// capitalizeWord
+
+const capitalizeWord = (word) => {
+  if (word.length === 0) return "";
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+};
+
+const transformTitle = (title) => {
+  const words = title.split(" ");
+  const transformedWords = words.map((word) =>
+    word.charAt(0) === word.charAt(0).toUpperCase()
+      ? capitalizeWord(word)
+      : word
+  );
+  return transformedWords.join(" ");
+};
+
+const truncateTitle = (title, maxLength) => {
+  if (title.length <= maxLength) {
+    return transformTitle(title);
+  }
+
+  let truncated = title.substring(0, maxLength).trim();
+
+  if (truncated.endsWith(" ")) {
+    truncated = truncated.slice(0, -1);
+  }
+
+  if (truncated.endsWith(".") || truncated.endsWith(",")) {
+    truncated = truncated.slice(0, -1);
+  }
+
+  return `${transformTitle(truncated)}...`;
+};
+
+export { transformTitle, truncateTitle };

@@ -69,6 +69,17 @@ export const MyBookList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
-  row-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+    gap: 23px;
+  }
+
+  @media (min-width: 1280px) {
+    justify-content: flex-start;
+    gap: 20px;
+  }
 `;

@@ -31,9 +31,22 @@ export const LinksWrap = styled.div`
   color: var(--input-title);
 `;
 export const ImgWrap = styled.div`
-  margin: 14px 0 11px;
-  @media only screen and (min-width: 768px) {
-    margin: 20px 0 14px;
+  width: 270px;
+  overflow: hidden;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 15px;
+
+  .book-item {
+    width: 71px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+  }
+
+  img {
+    width: 100%;
   }
 `;
 export const LinkStyled = styled(Link)`
@@ -66,4 +79,27 @@ export const NextSVGStyled = styled(NextSVG)`
     width: 24px;
     height: 24px;
   }
+`;
+
+export const RecommendedBooksTitleSpan = styled.span`
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #e3e3e3;
+  padding-top: 8px;
+  padding-bottom: 2px;
+`;
+export const RecommendedBooksImg = styled.img`
+  border-radius: 8px;
+  width: 71px;
+  height: 107px;
+`;
+
+export const RecommendedBooksAutorSpan = styled.span`
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #686868;
 `;
