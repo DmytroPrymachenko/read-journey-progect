@@ -54,3 +54,5 @@ Frontend: React, Redux, react-hook-form, Yup, styled-components
 Backend: Express.js (API documentation)
 Build Tools: Webpack, Babel
 Styling: CSS-in-JS (styled-components)
+
+Thank you for being a part of Read Journey! If you have any questions or need further assistance, feel free to reach out. Happy reading! 📖✨
