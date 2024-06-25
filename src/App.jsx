@@ -1,5 +1,11 @@
 import { Suspense, useEffect } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import { Loader } from "./components/Loader/Loader";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -14,7 +20,6 @@ import { setPath } from "./store/books/booksSlise";
 import RecommendPage from "./pages/RecommendPage/RecommendPage";
 import MyLibraryPage from "./pages/MyLibraryPage/MyLibraryPage";
 import ReadingPage from "./pages/ReadingPage/ReadingPage";
-// import LibraryPage from "./pages/LibraryPage/LibraryPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +27,7 @@ function App() {
   const expireTime = useSelector(selectExpireTime);
   const { pathname } = useLocation();
   const loading = useSelector((state) => state.loading.loading);
+  const navigate = useNavigate();
 
   console.log(pathname);
   useEffect(() => {
@@ -47,6 +53,13 @@ function App() {
       }
     }
   }, [dispatch, user, expireTime]);
+
+  useEffect(() => {
+    if (pathname === "/") {
+      navigate("/recommended");
+    }
+  }, [pathname, navigate]);
+
   return (
     <>
       {loading && <Loader />}

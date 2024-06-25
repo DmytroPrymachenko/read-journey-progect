@@ -6,6 +6,7 @@ import {
   selectReadingInfo,
 } from "../../store/books/selectors";
 import {
+  CoverReading,
   ReadingBookH1,
   ReadingBookIMG,
   ReadingBookTimeRemainingWraper,
@@ -18,6 +19,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import StopTabletSVG from "../../images/svg/readingButtonStartStop/StopTabletSVG";
 import StartTabletSVG from "../../images/svg/readingButtonStartStop/StartTabletSVG";
+import {
+  Cover,
+  CoverText,
+  LibraryItemImg,
+  Span,
+} from "../LibraryItem/LibraryItem.Styled";
 
 const ReadingBook = ({ isTimeLeft }) => {
   const { id } = useParams();
@@ -77,7 +84,16 @@ const ReadingBook = ({ isTimeLeft }) => {
 
       <>
         <ReadingBookWraper>
-          <ReadingBookIMG src={bookInfo.imageUrl} alt={bookInfo.title} />
+          <CoverReading $image={bookInfo.imageUrl}>
+            {bookInfo.imageUrl ? (
+              <LibraryItemImg src={bookInfo.imageUrl} alt={bookInfo.title} />
+            ) : (
+              <CoverText>
+                There is no cover for <br /> <Span>{bookInfo.title}</Span>
+              </CoverText>
+            )}
+          </CoverReading>
+
           <ReadingBookTitleWraper>
             <span>{bookInfo.title}</span>
             <span>{bookInfo.author}</span>

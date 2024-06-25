@@ -1,14 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-// export const ContentWrap = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 20px;
-//   background: #1f1f1f;
-//   border-radius: 30px;
-//   padding: 20px;
-// `;
 export const ContentWrap = styled.p``;
 export const Form = styled.form`
   display: flex;
@@ -44,9 +36,6 @@ export const FiltersInput = styled.input`
   }
 `;
 
-// export const FiltersInputWraper = styled.div`
-//   position: relative;
-// `;
 export const FiltersInputSpan = styled.span`
   position: absolute;
   font-weight: 500;
@@ -78,20 +67,7 @@ export const FiltersFormWraper = styled.div`
   flex-direction: column;
   padding-bottom: 20px;
 `;
-// export const FiltersSpan = styled.span`;
-//   padding-left: 13px;
 
-//   font-weight: 500;
-//   font-size: 10px;
-//   line-height: 120%;
-//   letter-spacing: -0.02em;
-//   color: #f9f9f9;
-// `;
-// export const FiltersContentWraper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 20px;
-// `;
 export const WorkoutContainer = styled.div`
   display: flex;
   flex-direction: column;

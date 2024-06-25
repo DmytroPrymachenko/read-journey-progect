@@ -35,6 +35,19 @@ export const HeaderUserContainer = styled.div`
   justify-content: center;
   gap: 10px;
 `;
+
+export const HeaderUserDextopContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+`;
+export const HeaderUserDextopWraper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+`;
 export const HeaderButtonBurger = styled.button`
   cursor: pointer;
   background: transparent;
@@ -118,4 +131,12 @@ export const HeaderLogoWraper = styled.div`
     text-transform: uppercase;
     color: #f9f9f9;
   }
+`;
+export const HeaderUserName = styled.span`
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #f9f9f9;
 `;

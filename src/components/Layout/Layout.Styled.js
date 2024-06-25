@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 100%;
+  max-width: 375px;
   padding: 20px 20px;
   margin: 0 auto;
 
@@ -15,17 +15,10 @@ export const Container = styled.div`
   @media only screen and (min-width: 1280px) {
     max-width: 1280px;
   }
-  @media only screen and (min-width: 1440px) {
-    max-width: 1440px;
-    padding-top: 16px;
-    padding-right: 64px;
-    padding-bottom: 27px;
-    padding-left: 64px;
-  }
 `;
 
 export const HeaderContainer = styled.div`
-  max-width: 100%;
+  max-width: 375px;
   padding-top: 20px;
   padding-right: 20px;
   padding-left: 20px;
@@ -39,10 +32,5 @@ export const HeaderContainer = styled.div`
   }
   @media only screen and (min-width: 1280px) {
     max-width: 1280px;
-  }
-  @media only screen and (min-width: 1440px) {
-    max-width: 1440px;
-    padding-right: 64px;
-    padding-left: 64px;
   }
 `;

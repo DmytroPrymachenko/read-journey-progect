@@ -27,6 +27,27 @@ export const FiltersInput = styled.input`
   }
 `;
 
+export const FiltersInputReading = styled.input`
+  background: #262626;
+  border-radius: 12px;
+  padding: 14px 14px 14px 88px;
+  width: 100%;
+  color: #f9f9f9;
+  border: none;
+
+  &::placeholder {
+    color: #f9f9f9;
+  }
+  cursor: pointer;
+  transition: transform 0.6s ease, border-color 0.6s ease;
+
+  &:hover,
+  &:focus {
+    border-color: #f4c550;
+    outline: none;
+  }
+`;
+
 export const FiltersInputWraper = styled.div`
   position: relative;
 `;
@@ -74,6 +95,9 @@ export const FiltersContentWraper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (min-width: 1280px) {
+    width: 313px;
+  }
 `;
 export const WorkoutContainer = styled.div`
   display: flex;

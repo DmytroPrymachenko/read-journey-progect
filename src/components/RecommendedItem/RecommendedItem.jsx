@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import {
@@ -28,6 +28,24 @@ const RecommendedItem = ({ book }) => {
     setIsModalItem(false);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    if (isModalItem) {
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isModalItem]);
+
   const handleAddBook = () => {
     const isBookExists = userBooks.some(
       (userBook) => userBook.title === book.title
@@ -43,6 +61,7 @@ const RecommendedItem = ({ book }) => {
         toast.success("Book added successfully!");
         console.log("Book added:", data);
         dispatch(fetchUserBooks());
+        closeModal();
       })
       .catch((error) => {
         toast.error("Error adding book: " + error.message);
@@ -84,8 +103,8 @@ const RecommendedItem = ({ book }) => {
   };
 
   const truncatedTitle =
-    book.title.length > 22
-      ? truncateTitle(book.title, 18)
+    book.title.length > 19
+      ? truncateTitle(book.title, 16)
       : transformTitle(book.title);
   return (
     <>

@@ -39,6 +39,9 @@ export const StatisticsWraper = styled.div`
   @media (min-width: 768px) {
     height: 252px;
   }
+  @media (min-width: 1280px) {
+    height: 373px;
+  }
 `;
 const hoverAnimation = keyframes`
   0% {

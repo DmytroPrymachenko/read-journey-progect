@@ -9,6 +9,9 @@ import {
   HeaderLogoWraper,
   HeaderTabletLogOut,
   HeaderUserContainer,
+  HeaderUserDextopContainer,
+  HeaderUserDextopWraper,
+  HeaderUserName,
 } from "./Header.Styled";
 import { selectUser } from "../../store/auth/selectors";
 import BurgerOpen from "../../images/BurgerOpen";
@@ -26,6 +29,7 @@ const Header = () => {
   const [isBackdropActiveOpen, setIsBackdropActiveOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log("user", user);
 
   const handleLogout = () => {
     dispatch(logoutThunk())
@@ -66,69 +70,79 @@ const Header = () => {
 
   return (
     <>
-      <>
-        {isBackdropActiveOpen && <Backdrop closeModal={closeModal} />}
-        {setIsMobaleBurger && (
-          <>
-            <MobaleBurger
-              handleLogout={handleLogout}
-              closeModal={closeModal}
-              isOpen={isMobaleBurger}
-            />
-          </>
-        )}
-      </>
+      {isBackdropActiveOpen && <Backdrop closeModal={closeModal} />}
+      {isMobaleBurger && (
+        <MobaleBurger
+          handleLogout={handleLogout}
+          closeModal={closeModal}
+          isOpen={isMobaleBurger}
+        />
+      )}
       <HeaderContainer>
         <HeaderLogoWraper>
           <Logo />
           {isDextopView && <span>read journey</span>}
         </HeaderLogoWraper>
-        <>
-          {isTabletView ? (
-            <>
-              <HeaderDivLink>
-                <HeaderLink
-                  to="/recommended"
-                  aria-label="Home"
-                  style={{ textDecoration: "none" }}
-                >
-                  Home
-                </HeaderLink>
-                <HeaderLink
-                  to="/library"
-                  aria-label="My library"
-                  style={{ textDecoration: "none" }}
-                >
-                  My library
-                </HeaderLink>
-                {/* {user && (
-                  <HeaderLink
-                    to="/favorites"
-                    aria-label="Teachers"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Favorites
-                  </HeaderLink>
-                )} */}
-              </HeaderDivLink>
+        {isTabletView ? (
+          <>
+            <HeaderDivLink>
+              <HeaderLink
+                to="/recommended"
+                aria-label="Home"
+                style={{ textDecoration: "none" }}
+              >
+                Home
+              </HeaderLink>
+              <HeaderLink
+                to="/library"
+                aria-label="My library"
+                style={{ textDecoration: "none" }}
+              >
+                My library
+              </HeaderLink>
+            </HeaderDivLink>
+
+            {isDextopView ? (
+              <HeaderUserDextopContainer>
+                <HeaderUserDextopWraper>
+                  {userName && (
+                    <HeaderIconUser>
+                      <span>{userName}</span>
+                    </HeaderIconUser>
+                  )}
+                  {user && user.name && (
+                    <HeaderUserName>{user.name}</HeaderUserName>
+                  )}
+                </HeaderUserDextopWraper>
+                <HeaderTabletLogOut onClick={handleLogout}>
+                  Log out
+                </HeaderTabletLogOut>
+              </HeaderUserDextopContainer>
+            ) : (
               <HeaderUserContainer>
-                <HeaderIconUser>
-                  <span>{userName}</span>
-                </HeaderIconUser>
-                <HeaderTabletLogOut>Log out</HeaderTabletLogOut>
+                {userName && (
+                  <HeaderIconUser>
+                    <span>{userName}</span>
+                  </HeaderIconUser>
+                )}
+                <HeaderTabletLogOut onClick={handleLogout}>
+                  Log out
+                </HeaderTabletLogOut>
               </HeaderUserContainer>
-            </>
-          ) : (
-            <HeaderUserContainer>
+            )}
+          </>
+        ) : (
+          <HeaderUserContainer>
+            {userName && (
               <HeaderIconUser>
                 <span>{userName}</span>
               </HeaderIconUser>
-              <HeaderButtonBurger onClick={handleBurgerOpen}>
-                <BurgerOpen />
-              </HeaderButtonBurger>
-            </HeaderUserContainer>
-          )}
-        </>
+            )}
+            <HeaderButtonBurger onClick={handleBurgerOpen}>
+              <BurgerOpen />
+            </HeaderButtonBurger>
+          </HeaderUserContainer>
+        )}
       </HeaderContainer>
     </>
   );

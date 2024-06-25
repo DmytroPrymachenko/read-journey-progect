@@ -9,6 +9,7 @@ import {
   FiltersButton,
   FiltersFormWraper,
   FiltersInput,
+  FiltersInputReading,
   FiltersInputSpan,
   FiltersInputWraper,
   FiltersSpan,
@@ -75,7 +76,7 @@ const ReadingForm = () => {
               : "Start page:"}
           </FiltersSpan>
           <FiltersInputWraper>
-            <FiltersInput
+            <FiltersInputReading
               {...register("page", {
                 validate: (value) => {
                   if (value > bookInfo.totalPages) {

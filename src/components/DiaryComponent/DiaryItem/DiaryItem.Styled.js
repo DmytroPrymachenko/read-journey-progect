@@ -4,6 +4,7 @@ export const DiaryDateWraper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-right: 20px;
   padding-left: 10px;
   & > :first-child {
     font-weight: 700;
@@ -32,12 +33,21 @@ export const DiaryDateWraper = styled.div`
 export const DiaryDateLi = styled.li`
   display: flex;
   flex-direction: column;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    width: 2px;
+    height: 100%;
+    background-color: #1f1f1f;
+  }
   /* width: 100%;
   justify-content: space-between; */
 `;
 
 export const DiaryListWraper = styled.div`
   display: flex;
+  padding-bottom: 16px;
 
   /* width: 100%;
   justify-content: space-between; */
@@ -148,4 +158,14 @@ export const DiaryListUl = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 28px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    width: 2px;
+    height: 100%;
+    background-color: #1f1f1f;
+  }
 `;

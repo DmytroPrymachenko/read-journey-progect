@@ -1,20 +1,15 @@
-import { differenceInMinutes, differenceInSeconds, format } from "date-fns";
+import { differenceInMinutes, differenceInSeconds } from "date-fns";
 
 import { selectBookInfo } from "../../../store/books/selectors";
 import { useSelector } from "react-redux";
-import BlackWhiteSquare from "../../../images/BlackWhiteSquare";
+
 import {
-  BlackWhiteSquareWrapper,
   DeleteRecordButton,
   DeleteRecordPageHourDiv,
-  DeleteRecordPagesSpan,
   DeleteRecordVectorWraper,
   DeleteRecordWraper,
-  DiaryDateLeftWraper,
-  DiaryDateLi,
   DiaryDatePercentageWraper,
   DiaryDateRightWraper,
-  DiaryDateWraper,
   DiaryItemLi,
   PerHour,
   ReadingSpeed,
@@ -24,7 +19,7 @@ import DeleteRecord from "../../../images/DeleteRecord";
 
 const DiaryItem = ({ progress, handleDeleteRecord }) => {
   const bookInfo = useSelector(selectBookInfo);
-  const formattedDate = format(new Date(progress.startReading), "dd.MM.yyyy");
+
   const startTime = new Date(progress.startReading);
   const endTime = new Date(progress.finishReading);
 
@@ -87,54 +82,6 @@ const DiaryItem = ({ progress, handleDeleteRecord }) => {
         </>
       </DiaryItemLi>
     </>
-    // <>
-    //   <>
-    //     <>
-    //       <>
-    //         <>
-    //           <>
-    //             <BlackWhiteSquareWrapper>
-    //               <BlackWhiteSquare />
-    //             </BlackWhiteSquareWrapper>
-    //           </>
-    //           <>
-    //             <DiaryDateWraper>
-    //               <span>{formattedDate}</span>
-
-    //               <DiaryDatePercentageWraper>
-    //                 <span>{percentageRead}%</span>
-    //                 <span>{durationText}</span>
-    //               </DiaryDatePercentageWraper>
-    //             </DiaryDateWraper>
-    //           </>
-    //         </>
-    //       </>
-    //     </>
-    //     <>
-    //       <DiaryDateRightWraper>
-    //         <>
-    //           <>
-    //             <DeleteRecordPagesSpan>{pagesRead} pages</DeleteRecordPagesSpan>
-    //           </>
-    //           <>
-    //             <DeleteRecordVectorWraper>
-    //               <DeleteRecordWraper>
-    //                 <VectorSVG />
-    //                 <DeleteRecordButton onClick={handleDeleteRecord}>
-    //                   <DeleteRecord />
-    //                 </DeleteRecordButton>
-    //               </DeleteRecordWraper>
-
-    //               <DeleteRecordPageHourDiv>
-    //                 <ReadingSpeed>{formattedReadingSpeed} pages</ReadingSpeed>
-    //                 <PerHour>per hour</PerHour>
-    //               </DeleteRecordPageHourDiv>
-    //             </DeleteRecordVectorWraper>
-    //           </>
-    //         </>
-    //       </DiaryDateRightWraper>
-    //     </>
-    //   </DiaryDateLi>
   );
 };
 

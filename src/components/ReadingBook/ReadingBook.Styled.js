@@ -83,3 +83,19 @@ export const ReadingBookTimeRemainingWraper = styled.div`
     color: #686868;
   }
 `;
+
+export const CoverReading = styled.div`
+  border-radius: 8px;
+  width: 137px;
+  @media (min-width: 768px) {
+    width: 169px;
+    height: 256px;
+  }
+  @media (min-width: 1280px) {
+    width: 224px;
+    height: 340px;
+  }
+  height: 208px;
+  cursor: pointer;
+  border: ${(props) => (props.$image ? "none" : "1px solid #3e3e3e")};
+`;

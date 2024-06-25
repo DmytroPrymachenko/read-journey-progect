@@ -4,11 +4,12 @@ export const RecommBooksListWraper = styled.div`
   border-radius: 30px;
   background: #1f1f1f;
   padding: 40px 20px;
+  width: 100%;
   @media (min-width: 768px) {
     padding: 40px 40px;
   }
   @media (min-width: 1280px) {
-    padding: 40px 42px;
+    padding: 40px 40px;
   }
   & > :first-child {
     display: flex;
@@ -52,7 +53,7 @@ export const RecommBooksListUl = styled.ul`
   }
 
   li {
-    min-width: 137px;
+    width: 136px;
     display: flex;
     flex-direction: column;
 

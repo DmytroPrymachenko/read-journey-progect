@@ -45,19 +45,6 @@ export const fetchUserBooks = createAsyncThunk(
     }
   }
 );
-// export const fetchUserBooks = createAsyncThunk(
-//   "books/UserBooks",
-//   async ({ status }, thunkAPI) => {
-//     try {
-//       const { data } = await api.get("/books/own", { params: { status } });
-//       console.log("data", data);
-//       return data;
-//     } catch (error) {
-//       console.log("error", error);
-//       return thunkAPI.rejectWithValue(error.response.data);
-//     }
-//   }
-// );
 
 export const deleteUserBook = createAsyncThunk(
   "books/deleteUserBook",

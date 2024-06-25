@@ -15,4 +15,7 @@ export const ProgressWraper = styled.div`
       min-width: 321px;
     }
   }
+  @media (min-width: 1280px) {
+    flex-direction: column;
+  }
 `;

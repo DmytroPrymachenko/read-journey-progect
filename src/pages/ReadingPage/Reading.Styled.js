@@ -7,4 +7,11 @@ export const ReadingWraper = styled.div`
   @media (min-width: 768px) {
     gap: 16px;
   }
+  @media (min-width: 1280px) {
+    gap: 6px;
+    flex-direction: row;
+  }
+  & > :nth-child(2) {
+    width: 100%;
+  }
 `;
