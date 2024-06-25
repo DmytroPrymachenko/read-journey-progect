@@ -66,7 +66,9 @@ const DiaryItem = ({ progress, handleDeleteRecord }) => {
                 <DeleteRecordVectorWraper>
                   <DeleteRecordWraper>
                     <VectorSVG />
-                    <DeleteRecordButton onClick={handleDeleteRecord}>
+                    <DeleteRecordButton
+                      onClick={() => handleDeleteRecord(progress._id)}
+                    >
                       <DeleteRecord />
                     </DeleteRecordButton>
                   </DeleteRecordWraper>

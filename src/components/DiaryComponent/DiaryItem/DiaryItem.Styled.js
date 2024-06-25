@@ -136,16 +136,7 @@ export const BlackWhiteSquareWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  ${DiaryDateLi}:not(:last-child) &::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    background: #1f1f1f;
-    top: 20%;
-    left: 50%;
-
-    height: 100%;
-  }
+  z-index: 10;
 `;
 
 export const DiaryItemLi = styled.li`

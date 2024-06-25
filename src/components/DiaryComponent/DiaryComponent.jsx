@@ -64,9 +64,7 @@ const DiaryComponent = () => {
               <DiaryList
                 key={group.date}
                 group={group}
-                handleDeleteRecord={(readingId) =>
-                  handleDeleteRecord(group.date, readingId)
-                }
+                handleDeleteRecord={handleDeleteRecord}
               />
             ))}
           </DiaryComponentUl>

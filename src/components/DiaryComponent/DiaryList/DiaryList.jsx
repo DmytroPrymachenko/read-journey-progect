@@ -37,7 +37,7 @@ const DiaryList = ({ group, handleDeleteRecord }) => {
           <DiaryItem
             key={progress._id}
             progress={progress}
-            handleDeleteRecord={() => handleDeleteRecord(progress._id)}
+            handleDeleteRecord={handleDeleteRecord}
           />
         ))}
       </DiaryListUl>
