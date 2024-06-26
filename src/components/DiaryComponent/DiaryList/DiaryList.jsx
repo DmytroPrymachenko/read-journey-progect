@@ -15,7 +15,9 @@ const DiaryList = ({ group, handleDeleteRecord }) => {
   useEffect(() => {
     let totalPages = 0;
     group.progress.forEach((progress) => {
-      totalPages += progress.finishPage - progress.startPage;
+      const progressFinishPage = progress.finishPage ?? progress.startPage;
+
+      totalPages += progressFinishPage - progress.startPage;
     });
     setPagesRead(totalPages);
   }, [group]);

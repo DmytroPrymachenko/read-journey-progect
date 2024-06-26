@@ -24,16 +24,19 @@ const DiaryItem = ({ progress, handleDeleteRecord }) => {
   const endTime = new Date(progress.finishReading);
 
   const sessionDurationHours = (endTime - startTime) / (1000 * 60 * 60);
+  const progressFinishPage = progress.finishPage ?? progress.startPage;
 
   const percentageRead = (
-    (progress.finishPage / bookInfo.totalPages) *
+    (progressFinishPage / bookInfo.totalPages) *
     100
   ).toFixed(1);
 
-  const pagesRead = progress.finishPage - progress.startPage;
+  const pagesRead = progressFinishPage - progress.startPage;
 
   const readingSpeed = pagesRead / sessionDurationHours;
-  const formattedReadingSpeed = readingSpeed.toFixed(0);
+  const formattedReadingSpeed = isNaN(readingSpeed)
+    ? 0
+    : readingSpeed.toFixed(0);
 
   let durationText;
   if (sessionDurationHours < 1) {
@@ -41,13 +44,17 @@ const DiaryItem = ({ progress, handleDeleteRecord }) => {
       new Date(progress.finishReading),
       new Date(progress.startReading)
     );
-    durationText = `${readingDurationSeconds} seconds`;
+    durationText = isNaN(readingDurationSeconds)
+      ? "0 seconds"
+      : `${readingDurationSeconds} seconds`;
   } else {
     const readingDurationMinutes = differenceInMinutes(
       new Date(progress.finishReading),
       new Date(progress.startReading)
     );
-    durationText = `${readingDurationMinutes} minutes`;
+    durationText = isNaN(readingDurationMinutes)
+      ? "0 minutes"
+      : `${readingDurationMinutes} minutes`;
   }
 
   return (

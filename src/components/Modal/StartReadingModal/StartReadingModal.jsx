@@ -56,7 +56,7 @@ export const StartReadingModal = ({ setModal, book }) => {
           <TextWrap>
             <Title>{book.title}</Title>
             <Author>{book.author}</Author>
-            <Pages>{book.totalPages}</Pages>
+            <Pages>{book.totalPages} pages</Pages>
           </TextWrap>
         </ContentWrap>
         <StartReadingtButton

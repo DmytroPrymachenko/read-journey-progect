@@ -8,7 +8,6 @@ import {
 import {
   CoverReading,
   ReadingBookH1,
-  ReadingBookIMG,
   ReadingBookTimeRemainingWraper,
   ReadingBookTitleWraper,
   ReadingBookWraper,
@@ -20,7 +19,6 @@ import { useEffect, useState } from "react";
 import StopTabletSVG from "../../images/svg/readingButtonStartStop/StopTabletSVG";
 import StartTabletSVG from "../../images/svg/readingButtonStartStop/StartTabletSVG";
 import {
-  Cover,
   CoverText,
   LibraryItemImg,
   Span,
